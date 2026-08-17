@@ -1,61 +1,41 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import DasborEksekutif from './pages/DasborEksekutif';
-import ManajemenDapur from './pages/ManajemenDapur';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './pages/Login';
+import ExecutiveDashboard from './pages/ExecutiveDashboard';
+import KitchenManagement from './pages/KitchenManagement';
+import TokenManagement from './pages/TokenManagement';
 import AnalitikLimbah from './pages/AnalitikLimbah';
+import SupplierIntelligence from './pages/SupplierIntelligence';
+import NutritionAnalytics from './pages/NutritionAnalytics';
+import PublicPortal from './pages/PublicPortal';
+import DistributionInput from './pages/DistributionInput';
+import RekomendasiAI from './pages/RekomendasiAI';
+import LogistikDistribusi from './pages/LogistikDistribusi';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout title="Dasbor Eksekutif">
-              <DasborEksekutif />
-            </Layout>
-          }
-        />
-        <Route
-          path="/dapur"
-          element={
-            <Layout title="Manajemen Dapur">
-              <ManajemenDapur />
-            </Layout>
-          }
-        />
-        <Route
-          path="/limbah"
-          element={
-            <Layout title="Analitik Limbah">
-              <AnalitikLimbah />
-            </Layout>
-          }
-        />
-        {/* Placeholder routes for future pages */}
-        <Route path="/logistik" element={<Layout title="Logistik"><PlaceholderPage title="Logistik" icon="local_shipping" /></Layout>} />
-        <Route path="/token" element={<Layout title="Token Digital"><PlaceholderPage title="Token Digital" icon="pin" /></Layout>} />
-        <Route path="/pemasok" element={<Layout title="Intelijen Pemasok"><PlaceholderPage title="Intelijen Pemasok" icon="precision_manufacturing" /></Layout>} />
-        <Route path="/nutrisi" element={<Layout title="Analitik Nutrisi"><PlaceholderPage title="Analitik Nutrisi" icon="monitoring" /></Layout>} />
-        <Route path="/rekomendasi" element={<Layout title="Rekomendasi AI"><PlaceholderPage title="Rekomendasi AI" icon="psychology" /></Layout>} />
-        <Route path="/portal" element={<Layout title="Portal Publik"><PlaceholderPage title="Portal Publik" icon="public" /></Layout>} />
+        {/* Redirect root ke /login */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+
+        {/* Auth */}
+        <Route path="/login" element={<Login />} />
+
+        {/* Main App Pages */}
+        <Route path="/dashboard" element={<ExecutiveDashboard />} />
+        <Route path="/kitchen" element={<KitchenManagement />} />
+        <Route path="/token" element={<TokenManagement />} />
+        <Route path="/scanner" element={<AnalitikLimbah />} />
+        <Route path="/supplier" element={<SupplierIntelligence />} />
+        <Route path="/nutrition" element={<NutritionAnalytics />} />
+        <Route path="/public" element={<PublicPortal />} />
+        <Route path="/distribution" element={<DistributionInput />} />
+        <Route path="/rekomendasi" element={<RekomendasiAI />} />
+        <Route path="/logistik" element={<LogistikDistribusi />} />
+
+        {/* Fallback */}
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </BrowserRouter>
-  );
-}
-
-function PlaceholderPage({ title, icon }) {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-6">
-      <div className="w-20 h-20 rounded-2xl bg-primary-container/20 flex items-center justify-center text-primary-container">
-        <span className="material-symbols-outlined text-[48px]">{icon}</span>
-      </div>
-      <div className="text-center">
-        <h2 className="text-headline-md font-bold text-on-background mb-2">{title}</h2>
-        <p className="text-body-md text-on-surface-variant">
-          Halaman ini sedang dalam pengembangan.
-        </p>
-      </div>
-    </div>
   );
 }
