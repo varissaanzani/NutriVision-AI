@@ -41,23 +41,37 @@ const NutritionAnalytics = () => {
       </nav>
 
       {/* ── Main Content ── */}
-      <main className="flex-1 ml-0 md:ml-sidebar-width min-h-screen bg-background p-lg">
-        <header className="flex justify-between items-center mb-8">
-          <div>
-            <h2 className="font-headline-lg text-headline-lg font-bold text-on-background">Dasbor Dietisien</h2>
-            <p className="text-sm text-on-surface-variant mt-1">Rincian pencapaian target nutrisi harian (RDA/AKG) pasien.</p>
-          </div>
-          <div className="flex gap-4">
-            <button className="bg-surface border border-outline-variant px-4 py-2 rounded-lg font-label-md flex items-center gap-2 hover:bg-surface-container-low transition-colors">
-              <span className="material-symbols-outlined text-sm">calendar_today</span> Hari Ini
-            </button>
-            <button className="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md flex items-center gap-2 hover:bg-primary-container transition-colors">
-              <span className="material-symbols-outlined text-sm">download</span> Laporan
-            </button>
+      <main className="flex-1 ml-0 md:ml-sidebar-width min-h-screen bg-background flex flex-col">
+        
+        {/* Top Navbar */}
+        <header className="bg-surface border-b border-outline-variant/30 px-lg h-16 flex items-center justify-between sticky top-0 z-50">
+          <h1 className="font-title-lg text-title-lg font-bold text-primary">NutriVision AI</h1>
+          <div className="flex gap-4 items-center">
+            <button className="text-on-surface-variant hover:text-primary transition-colors"><span className="material-symbols-outlined">notifications</span></button>
+            <button className="text-on-surface-variant hover:text-primary transition-colors"><span className="material-symbols-outlined">settings</span></button>
+            <div className="w-8 h-8 rounded-full overflow-hidden border border-outline-variant bg-surface-container-highest">
+               <img src="https://i.pravatar.cc/100?img=1" alt="User" className="w-full h-full object-cover" />
+            </div>
           </div>
         </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="p-lg flex-1">
+          <header className="flex justify-between items-center mb-8">
+            <div>
+              <h2 className="font-headline-lg text-headline-lg font-bold text-on-background">Dasbor Dietisien</h2>
+              <p className="text-sm text-on-surface-variant mt-1">Rincian pencapaian target nutrisi harian (RDA/AKG) pasien.</p>
+            </div>
+            <div className="flex gap-4">
+              <button className="bg-surface border border-outline-variant px-4 py-2 rounded-lg font-label-md flex items-center gap-2 hover:bg-surface-container-low transition-colors">
+                <span className="material-symbols-outlined text-sm">calendar_today</span> Hari Ini
+              </button>
+              <button className="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md flex items-center gap-2 hover:bg-primary-container transition-colors">
+                <span className="material-symbols-outlined text-sm">download</span> Laporan
+              </button>
+            </div>
+          </header>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Main Column */}
           <div className="lg:col-span-2 space-y-6">
             
@@ -179,6 +193,7 @@ const NutritionAnalytics = () => {
             </div>
           </div>
 
+          </div>
         </div>
       </main>
     </div>
