@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
 
 const tabs = [
-  { icon: 'kitchen', label: 'Dapur', path: '/dapur' },
+  { icon: 'dashboard', label: 'Dasbor', path: '/dashboard' },
+  { icon: 'kitchen', label: 'Dapur', path: '/kitchen' },
   { icon: 'qr_code_scanner', label: 'Token', path: '/token' },
-  { icon: 'camera', label: 'Limbah', path: '/limbah' },
-  { icon: 'query_stats', label: 'Nutrisi', path: '/nutrisi' },
-  { icon: 'person', label: 'Profil', path: '/profil' },
+  { icon: 'camera', label: 'Limbah', path: '/scanner' },
+  { icon: 'person', label: 'Profil', path: '/public' },
 ];
 
 export default function BottomNavBar() {

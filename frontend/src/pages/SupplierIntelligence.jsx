@@ -3,45 +3,7 @@ import logonut from '../assets/logonut.png';
 
 const SupplierIntelligence = () => {
   return (
-    <div className="bg-background text-on-background flex min-h-screen font-body-md text-body-md">
-      {/* ── SideNavBar ── */}
-      <nav className="hidden md:flex bg-surface-container-low fixed left-0 top-0 bottom-0 w-sidebar-width flex-col py-lg px-md z-[60]">
-        <div className="flex items-center justify-center mb-xl px-4 mt-6">
-          <div className="w-48 h-20 flex items-center justify-center bg-transparent">
-            <img src={logonut} alt="NutriVision" className="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        <div className="flex-1 overflow-y-auto space-y-2">
-          <a href="/dashboard" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">dashboard</span> Dasbor Eksekutif
-          </a>
-          <a href="/kitchen" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">restaurant_menu</span> Manajemen Dapur
-          </a>
-          <a href="#" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">local_shipping</span> Logistik
-          </a>
-          <a href="/token" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">pin</span> Token Digital
-          </a>
-          <a href="/scanner" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">delete_sweep</span> Analitik Limbah
-          </a>
-          <a href="/supplier" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border-l-4 border-primary font-semibold hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">precision_manufacturing</span> Intelijen Pemasok
-          </a>
-          <a href="/nutrition" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">monitoring</span> Analitik Nutrisi
-          </a>
-          <a href="/public" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">public</span> Portal Publik
-          </a>
-        </div>
-      </nav>
-
-      {/* ── Main Content ── */}
-      <main className="flex-1 ml-0 md:ml-sidebar-width min-h-screen bg-background p-lg">
+    <>
         <header className="flex justify-between items-center mb-8">
           <div>
             <h2 className="font-headline-lg text-headline-lg font-bold text-on-background">Intelijen Pemasok</h2>
@@ -145,8 +107,7 @@ const SupplierIntelligence = () => {
             </tbody>
           </table>
         </div>
-      </main>
-    </div>
+    </>
   );
 };
 

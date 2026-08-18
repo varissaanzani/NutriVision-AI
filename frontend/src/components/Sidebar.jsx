@@ -1,15 +1,15 @@
 import { NavLink } from 'react-router-dom';
 
 const menuItems = [
-  { icon: 'restaurant_menu', label: 'Manajemen Dapur', path: '/dapur' },
+  { icon: 'dashboard', label: 'Dasbor Eksekutif', path: '/dashboard' },
+  { icon: 'restaurant_menu', label: 'Manajemen Dapur', path: '/kitchen' },
   { icon: 'local_shipping', label: 'Logistik', path: '/logistik' },
   { icon: 'pin', label: 'Token Digital', path: '/token' },
-  { icon: 'delete_sweep', label: 'Analitik Limbah', path: '/limbah' },
-  { icon: 'precision_manufacturing', label: 'Intelijen Pemasok', path: '/pemasok' },
-  { icon: 'monitoring', label: 'Analitik Nutrisi', path: '/nutrisi' },
+  { icon: 'delete_sweep', label: 'Analitik Limbah', path: '/scanner' },
+  { icon: 'precision_manufacturing', label: 'Intelijen Pemasok', path: '/supplier' },
+  { icon: 'monitoring', label: 'Analitik Nutrisi', path: '/nutrition' },
   { icon: 'psychology', label: 'Rekomendasi AI', path: '/rekomendasi' },
-  { icon: 'dashboard', label: 'Dasbor Eksekutif', path: '/' },
-  { icon: 'public', label: 'Portal Publik', path: '/portal' },
+  { icon: 'public', label: 'Portal Publik', path: '/public' },
 ];
 
 export default function Sidebar() {

@@ -1,23 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logonut from '../assets/logonut.png';
-import { useLocation } from 'react-router-dom';
-
-const navLinks = [
-  { icon: 'restaurant_menu', label: 'Manajemen Dapur', href: '/kitchen' },
-  { icon: 'local_shipping', label: 'Logistik', href: '/logistik' },
-  { icon: 'pin', label: 'Token Digital', href: '/token' },
-  { icon: 'delete_sweep', label: 'Analitik Limbah', href: '/scanner' },
-  { icon: 'precision_manufacturing', label: 'Intelijen Pemasok', href: '/supplier' },
-  { icon: 'monitoring', label: 'Analitik Nutrisi', href: '/nutrition' },
-  { icon: 'psychology', label: 'Rekomendasi AI', href: '/rekomendasi' },
-  { icon: 'dashboard', label: 'Dasbor Eksekutif', href: '/dashboard' },
-  { icon: 'public', label: 'Portal Publik', href: '/public' },
-];
-
 const TokenManagement = () => {
   const [timeLeft, setTimeLeft] = useState(299);
-  const location = useLocation();
-
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(prev => (prev > 0 ? prev - 1 : 0));
@@ -32,75 +16,11 @@ const TokenManagement = () => {
   };
 
   return (
-    <div className="bg-background text-on-background flex min-h-screen font-body-md text-body-md">
-      {/* ── SideNavBar ── */}
-      <nav className="hidden md:flex bg-surface-container-low fixed left-0 top-0 bottom-0 w-[280px] flex-col py-6 px-4 z-[60]">
-        <div className="flex items-center justify-center mb-8 px-2 mt-2">
-          <img src={logonut} alt="NutriVision" className="w-44 h-16 object-contain" />
-        </div>
-        <div className="flex-1 overflow-y-auto space-y-1">
-          {navLinks.map((item) => {
-            const isActive = location.pathname === item.href;
-            return (
-              <a
-                key={item.label}
-                href={item.href}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all text-sm ${
-                  isActive
-                    ? 'bg-primary/10 text-primary border-l-4 border-primary font-semibold'
-                    : 'text-on-surface-variant hover:bg-surface-container-highest border-l-4 border-transparent'
-                }`}
-              >
-                <span
-                  className="material-symbols-outlined"
-                  style={isActive ? { fontVariationSettings: "'FILL' 1", fontSize: '20px' } : { fontSize: '20px' }}
-                >
-                  {item.icon}
-                </span>
-                {item.label}
-              </a>
-            );
-          })}
-        </div>
-        <div className="mt-auto space-y-2 pt-4 border-t border-outline-variant">
-          <button className="w-full bg-primary text-on-primary py-2.5 px-4 rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity">
-            Bantuan Sistem
-          </button>
-          <a
-            href="/login"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-all text-sm"
-          >
-            <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>logout</span>
-            Keluar
-          </a>
-        </div>
-      </nav>
-
-      {/* ── Main Content ── */}
-      <main className="flex-1 ml-0 md:ml-[280px] min-h-screen bg-background flex flex-col">
-
-        {/* Top Navbar */}
-        <header className="bg-surface border-b border-outline-variant/30 px-6 h-16 flex items-center justify-between sticky top-0 z-50 shadow-sm">
-          <div className="flex flex-col">
-            <h1 className="font-semibold text-base text-on-surface leading-tight">Token Digital</h1>
-            <p className="text-xs text-on-surface-variant">Hasilkan kode unik untuk verifikasi serah terima logistik.</p>
-          </div>
-          <div className="flex gap-3 items-center">
-            <button className="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
-              <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>notifications</span>
-            </button>
-            <button className="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
-              <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>settings</span>
-            </button>
-            <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-outline-variant">
-              <img src="https://i.pravatar.cc/100?img=5" alt="User" className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </header>
+    <>
 
         {/* Page Content */}
         <div className="flex-1 p-6 lg:p-8">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-[64rem] mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
 
               {/* ── LEFT: Token Card ── */}
@@ -255,8 +175,7 @@ const TokenManagement = () => {
             </div>
           </div>
         </div>
-      </main>
-    </div>
+    </>
   );
 };
 

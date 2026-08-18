@@ -10,6 +10,7 @@ import PublicPortal from './pages/PublicPortal';
 import DistributionInput from './pages/DistributionInput';
 import RekomendasiAI from './pages/RekomendasiAI';
 import LogistikDistribusi from './pages/LogistikDistribusi';
+import Layout from './components/Layout';
 
 export default function App() {
   return (
@@ -22,16 +23,18 @@ export default function App() {
         <Route path="/login" element={<Login />} />
 
         {/* Main App Pages */}
-        <Route path="/dashboard" element={<ExecutiveDashboard />} />
-        <Route path="/kitchen" element={<KitchenManagement />} />
-        <Route path="/token" element={<TokenManagement />} />
-        <Route path="/scanner" element={<AnalitikLimbah />} />
-        <Route path="/supplier" element={<SupplierIntelligence />} />
-        <Route path="/nutrition" element={<NutritionAnalytics />} />
-        <Route path="/public" element={<PublicPortal />} />
-        <Route path="/distribution" element={<DistributionInput />} />
-        <Route path="/rekomendasi" element={<RekomendasiAI />} />
-        <Route path="/logistik" element={<LogistikDistribusi />} />
+        <Route element={<Layout />}>
+          <Route path="/dashboard" element={<ExecutiveDashboard />} />
+          <Route path="/kitchen" element={<KitchenManagement />} />
+          <Route path="/token" element={<TokenManagement />} />
+          <Route path="/scanner" element={<AnalitikLimbah />} />
+          <Route path="/supplier" element={<SupplierIntelligence />} />
+          <Route path="/nutrition" element={<NutritionAnalytics />} />
+          <Route path="/public" element={<PublicPortal />} />
+          <Route path="/distribution" element={<DistributionInput />} />
+          <Route path="/rekomendasi" element={<RekomendasiAI />} />
+          <Route path="/logistik" element={<LogistikDistribusi />} />
+        </Route>
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/dashboard" replace />} />

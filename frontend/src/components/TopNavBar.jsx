@@ -11,7 +11,7 @@ export default function TopNavBar({ title }) {
             {title}
           </h2>
         )}
-        <div className="relative w-full max-w-md">
+        <div className="relative w-full max-w-[28rem]">
           <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">
             search
           </span>

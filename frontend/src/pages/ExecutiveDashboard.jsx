@@ -21,95 +21,7 @@ const ExecutiveDashboard = () => {
   }, []);
 
   return (
-    <div className="bg-background text-on-background flex min-h-screen font-body-md text-body-md">
-
-      {/* ── SideNavBar ── */}
-      <nav className="hidden md:flex bg-surface-container-low fixed left-0 top-0 bottom-0 w-sidebar-width flex-col py-lg px-md z-[60]">
-        {/* Logo */}
-        <div className="flex items-center justify-center mb-xl px-4 mt-6">
-          <div className="w-48 h-20 flex items-center justify-center bg-transparent">
-            <img src={logonut} alt="NutriVision" className="w-full h-full object-contain" />
-          </div>
-        </div>
-
-        {/* Nav Links */}
-        <div className="flex-1 overflow-y-auto space-y-2">
-          {/* Active item (Moved to top) */}
-          <a
-            href="/dashboard"
-            className="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary border-l-4 border-primary font-semibold hover:bg-surface-container-highest transition-all font-label-md text-label-md"
-          >
-            <span className="material-symbols-outlined">dashboard</span>
-            Dasbor Eksekutif
-          </a>
-
-          {[
-            { icon: 'restaurant_menu', label: 'Manajemen Dapur', href: '/kitchen' },
-            { icon: 'local_shipping', label: 'Logistik', href: '#' },
-            { icon: 'pin', label: 'Token Digital', href: '/token' },
-            { icon: 'delete_sweep', label: 'Analitik Limbah', href: '/scanner' },
-            { icon: 'precision_manufacturing', label: 'Intelijen Pemasok', href: '#' },
-            { icon: 'monitoring', label: 'Analitik Nutrisi', href: '/nutrition' },
-            { icon: 'psychology', label: 'Rekomendasi AI', href: '#' },
-          ].map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md"
-            >
-              <span className="material-symbols-outlined">{item.icon}</span>
-              {item.label}
-            </a>
-          ))}
-
-          <a href="/public" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">public</span>
-            Portal Publik
-          </a>
-        </div>
-
-        {/* Bottom */}
-        <div className="mt-auto space-y-4 pt-4 border-t border-outline-variant">
-          <button className="w-full bg-primary text-on-primary py-2 px-4 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors">
-            Bantuan Sistem
-          </button>
-          <a href="/login" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">logout</span>
-            Keluar
-          </a>
-        </div>
-      </nav>
-
-      {/* ── Main Content ── */}
-      <main className="flex-1 ml-0 md:ml-sidebar-width min-h-screen bg-background">
-
-        {/* TopNavBar */}
-        <header className="bg-surface shadow-[0_15px_0_0_rgba(25,28,30,0.04)] fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-lg h-16 ml-0 md:ml-[280px] shadow-sm">
-          <div className="flex items-center gap-4 flex-1">
-            <div className="relative w-full max-w-md">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-              <input
-                className="w-full bg-surface-container-low border-outline-variant border rounded-xl pl-10 pr-4 py-2 font-body-sm text-body-sm focus:ring-2 focus:ring-primary focus:border-primary transition-all"
-                placeholder="Cari data, metrik, atau lokasi..."
-                type="text"
-              />
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <button className="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
-              <span className="material-symbols-outlined">notifications</span>
-            </button>
-            <button className="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
-              <span className="material-symbols-outlined">settings</span>
-            </button>
-            <div className="w-8 h-8 rounded-full overflow-hidden ml-4 border border-outline-variant bg-primary-container flex items-center justify-center text-on-primary-container font-semibold text-sm">
-              A
-            </div>
-          </div>
-        </header>
-
-        {/* Dashboard Content */}
-        <div className="pt-24 px-md md:px-lg pb-3xl max-w-container-max mx-auto space-y-gutter">
+    <>
 
           {/* Page Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-xl">
@@ -322,33 +234,7 @@ const ExecutiveDashboard = () => {
             </div>
           </div>
 
-        </div>{/* end content */}
-      </main>
-
-      {/* ── Bottom Nav (Mobile Only) ── */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface shadow-[0_-4px_15px_rgba(0,0,0,0.04)] rounded-t-xl">
-        {[
-          { icon: 'kitchen', label: 'Dapur' },
-          { icon: 'qr_code_scanner', label: 'Token' },
-          { icon: 'camera', label: 'Limbah' },
-          { icon: 'query_stats', label: 'Nutrisi', active: true },
-          { icon: 'person', label: 'Profil' },
-        ].map((item) => (
-          <a
-            key={item.label}
-            href="#"
-            className={`flex flex-col items-center justify-center ${item.active
-              ? 'bg-primary-container text-on-primary-container rounded-xl px-4 py-1'
-              : 'text-on-surface-variant'
-            }`}
-          >
-            <span className="material-symbols-outlined">{item.icon}</span>
-            <span className="text-[10px] mt-1">{item.label}</span>
-          </a>
-        ))}
-      </nav>
-
-    </div>
+    </>
   );
 };
 

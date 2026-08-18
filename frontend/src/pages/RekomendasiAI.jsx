@@ -1,64 +1,16 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import logonut from '../assets/logonut.png';
-
-const navLinks = [
-  { icon: 'restaurant_menu', label: 'Manajemen Dapur', href: '/kitchen' },
-  { icon: 'local_shipping', label: 'Logistik', href: '/logistik' },
-  { icon: 'pin', label: 'Token Digital', href: '/token' },
-  { icon: 'delete_sweep', label: 'Analitik Limbah', href: '/scanner' },
-  { icon: 'precision_manufacturing', label: 'Intelijen Pemasok', href: '/supplier' },
-  { icon: 'monitoring', label: 'Analitik Nutrisi', href: '/nutrition' },
-  { icon: 'psychology', label: 'Rekomendasi AI', href: '/rekomendasi', active: true },
-  { icon: 'dashboard', label: 'Dasbor Eksekutif', href: '/dashboard' },
-  { icon: 'public', label: 'Portal Publik', href: '/public' },
-];
 
 const RekomendasiAI = () => {
   const [applied, setApplied] = useState(false);
 
   return (
-    <div className="bg-background text-on-background flex min-h-screen font-body-md text-body-md">
-      {/* SideNavBar */}
-      <nav className="hidden md:flex bg-surface-container-low fixed left-0 top-0 bottom-0 w-sidebar-width flex-col py-lg px-md z-[60]">
-        <div className="flex items-center justify-center mb-xl px-4 mt-6">
-          <div className="w-48 h-20 flex items-center justify-center bg-transparent">
-            <img src={logonut} alt="NutriVision" className="w-full h-full object-contain" />
-          </div>
-        </div>
-        <div className="flex-1 overflow-y-auto space-y-2">
-          {navLinks.map((item) => (
-            <a key={item.label} href={item.href}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-all font-label-md text-label-md ${item.active ? 'bg-primary/10 text-primary border-l-4 border-primary font-semibold' : 'text-on-surface-variant hover:bg-surface-container-highest'}`}>
-              <span className="material-symbols-outlined" style={item.active ? { fontVariationSettings: "'FILL' 1" } : {}}>{item.icon}</span>
-              {item.label}
-            </a>
-          ))}
-        </div>
-        <div className="mt-auto space-y-4 pt-4 border-t border-outline-variant">
-          <button className="w-full bg-primary text-on-primary py-2 px-4 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors">Bantuan Sistem</button>
-          <a href="/login" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-highest transition-all font-label-md text-label-md">
-            <span className="material-symbols-outlined">logout</span>Keluar
-          </a>
-        </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="flex-1 ml-0 md:ml-sidebar-width min-h-screen bg-background">
-        <header className="bg-surface shadow-[0_15px_0_0_rgba(25,28,30,0.04)] fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-lg h-16 ml-0 md:ml-[280px]">
-          <div className="font-headline-md text-headline-md font-bold text-primary">Rekomendasi AI</div>
-          <div className="flex items-center gap-2">
-            <button className="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high"><span className="material-symbols-outlined">notifications</span></button>
-            <button className="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high"><span className="material-symbols-outlined">settings</span></button>
-            <div className="w-8 h-8 rounded-full ml-4 border border-outline-variant bg-primary-container flex items-center justify-center text-on-primary-container font-semibold text-sm">A</div>
-          </div>
-        </header>
-
-        <div className="pt-24 px-md md:px-lg pb-3xl max-w-container-max mx-auto">
+    <>
           {/* Page Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-xl">
             <div>
               <h2 className="font-display-sm text-display-sm font-bold text-on-surface">Policy Optimizer</h2>
-              <p className="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">Mesin rekomendasi cerdas menganalisis pola konsumsi, data limbah historis, dan ketersediaan pasokan untuk memberikan saran operasional yang dapat ditindaklanjuti guna meningkatkan efisiensi dan nilai gizi.</p>
+              <p className="font-body-md text-body-md text-on-surface-variant mt-2 max-w-[42rem]">Mesin rekomendasi cerdas menganalisis pola konsumsi, data limbah historis, dan ketersediaan pasokan untuk memberikan saran operasional yang dapat ditindaklanjuti guna meningkatkan efisiensi dan nilai gizi.</p>
             </div>
             <div className="flex gap-3">
               <button className="px-4 py-2 rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container flex items-center gap-2 font-label-md text-label-md">
@@ -109,7 +61,7 @@ const RekomendasiAI = () => {
                   </div>
                   <button onClick={() => setApplied(!applied)}
                     className={`px-6 py-2.5 rounded-lg font-label-md text-label-md flex items-center gap-2 transition-colors ${applied ? 'bg-primary-container text-primary' : 'bg-primary text-on-primary hover:bg-primary-container'}`}>
-                    {applied ? '✓ Diterapkan' : <>Terapkan Kebijakan <span className="material-symbols-outlined text-sm">arrow_forward</span></>}
+                    {applied ? '? Diterapkan' : <>Terapkan Kebijakan <span className="material-symbols-outlined text-sm">arrow_forward</span></>}
                   </button>
                 </div>
               </div>
@@ -178,9 +130,7 @@ const RekomendasiAI = () => {
               <button className="px-4 py-2 rounded-lg border border-outline text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md">Buat Skenario Baru</button>
             </div>
           </div>
-        </div>
-      </main>
-    </div>
+    </>
   );
 };
 

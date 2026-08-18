@@ -36,17 +36,7 @@ const DistributionInput = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pb-20">
-      <header className="bg-surface shadow-sm sticky top-0 z-50 px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <a href="/dashboard" className="text-on-surface-variant hover:bg-surface-container rounded-full p-2 flex items-center justify-center">
-            <span className="material-symbols-outlined">arrow_back</span>
-          </a>
-          <h1 className="font-title-lg text-title-lg font-semibold text-on-background">Verifikasi & Pemindai Limbah</h1>
-        </div>
-      </header>
-
-      <main className="p-4 max-w-lg mx-auto space-y-6 mt-4">
+    <div className="max-w-[32rem] mx-auto space-y-6">
         {/* Detail Distribusi */}
         <div className="bg-surface p-6 rounded-2xl shadow-sm border border-outline-variant/30">
           <h2 className="font-title-lg text-title-lg font-semibold text-primary mb-4 flex items-center gap-2">
@@ -118,7 +108,6 @@ const DistributionInput = () => {
             <p><strong>Estimasi Kalori Terbuang:</strong> {result.calories_wasted} kkal</p>
           </div>
         )}
-      </main>
     </div>
   );
 };

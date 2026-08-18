@@ -1,18 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logonut from '../assets/logonut.png';
 
-const navLinks = [
-  { icon: 'restaurant_menu', label: 'Manajemen Dapur', href: '/kitchen' },
-  { icon: 'local_shipping', label: 'Logistik', href: '/logistik', active: true },
-  { icon: 'pin', label: 'Token Digital', href: '/token' },
-  { icon: 'delete_sweep', label: 'Analitik Limbah', href: '/scanner' },
-  { icon: 'precision_manufacturing', label: 'Intelijen Pemasok', href: '/supplier' },
-  { icon: 'monitoring', label: 'Analitik Nutrisi', href: '/nutrition' },
-  { icon: 'psychology', label: 'Rekomendasi AI', href: '/rekomendasi' },
-  { icon: 'dashboard', label: 'Dasbor Eksekutif', href: '/dashboard' },
-  { icon: 'public', label: 'Portal Publik', href: '/public' },
-];
-
 export default function LogistikDistribusi() {
   const [eta, setEta] = useState(14);
 
@@ -24,49 +12,8 @@ export default function LogistikDistribusi() {
   }, []);
 
   return (
-    <div className="bg-background text-on-background flex min-h-screen font-body-md text-body-md">
-      {/* SideNavBar */}
-      <nav className="hidden md:flex bg-surface-container-low fixed left-0 top-0 bottom-0 w-sidebar-width flex-col py-lg px-md z-[60]">
-        <div className="flex items-center justify-center mb-xl px-4 mt-6">
-          <img src={logonut} alt="NutriVision" className="w-48 h-20 object-contain" />
-        </div>
-        <div className="flex-1 overflow-y-auto space-y-2">
-          {navLinks.map((item) => (
-            <a key={item.label} href={item.href}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-all font-label-md text-label-md ${item.active ? 'bg-primary/10 text-primary border-l-4 border-primary font-semibold' : 'text-on-surface-variant hover:bg-surface-container-highest'}`}>
-              <span className="material-symbols-outlined" style={item.active ? { fontVariationSettings: "'FILL' 1" } : {}}>{item.icon}</span>
-              {item.label}
-            </a>
-          ))}
-        </div>
-        <div className="mt-auto space-y-4 pt-4 border-t border-outline-variant">
-          <button className="w-full bg-primary text-on-primary py-2 px-4 rounded-lg font-label-md hover:bg-primary-container transition-colors">Bantuan Sistem</button>
-          <a href="/login" className="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest font-label-md text-label-md">
-            <span className="material-symbols-outlined">logout</span>Keluar
-          </a>
-        </div>
-      </nav>
-
-      {/* Main */}
-      <main className="flex-1 ml-0 md:ml-sidebar-width min-h-screen bg-background">
-        <header className="bg-surface shadow-[0_15px_0_0_rgba(25,28,30,0.04)] fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-lg h-16 ml-0 md:ml-[280px]">
-          <div className="flex items-center gap-4 flex-1">
-            <div className="relative w-full max-w-md">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-              <input className="w-full bg-surface-container-low border border-outline-variant rounded-xl pl-10 pr-4 py-2 font-body-sm text-body-sm focus:ring-2 focus:ring-primary" placeholder="Cari rute, kendaraan, atau sekolah..." />
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-label-md">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>Status: Optimal
-            </span>
-            <button className="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high"><span className="material-symbols-outlined">notifications</span></button>
-            <div className="w-8 h-8 rounded-full border border-outline-variant bg-primary-container flex items-center justify-center text-on-primary-container font-semibold text-sm ml-2">A</div>
-          </div>
-        </header>
-
-        <div className="pt-24 px-md md:px-lg pb-3xl">
-          <div className="mb-lg">
+    <>
+      <div className="mb-lg">
             <h2 className="font-headline-lg text-headline-lg font-semibold text-on-surface mb-1">Distribusi Langsung</h2>
             <p className="font-body-md text-body-md text-on-surface-variant">Pemantauan armada dan suhu logistik nutrisi secara real-time.</p>
           </div>
@@ -199,8 +146,6 @@ export default function LogistikDistribusi() {
               </div>
             </div>
           </div>
-        </div>
-      </main>
-    </div>
+    </>
   );
 }
